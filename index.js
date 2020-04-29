@@ -1,4 +1,5 @@
 let fs = require('fs'),
+  path = require('path'),
   EventEmitter = require('events').EventEmitter,
   cp = require('child_process'),
   BASE_DIR = '/sys/class/gpio/',
@@ -194,7 +195,7 @@ class GPIO extends EventEmitter {
       //clearInterval(this._timer);
     }
     //this._timer = setInterval(this._monitor.bind(this, longPressMaxCount, clickMaxCount), 50);
-    this._timer = cp.fork('button-monitor', [longPressMaxCount, clickMaxCount, this._file_value]);
+    this._timer = cp.fork(path.join(__dirname, 'button-monitor.js'), [longPressMaxCount, clickMaxCount, this._file_value]);
     this._timer.on('message', this.emit.bind(this));
   }
   /**
