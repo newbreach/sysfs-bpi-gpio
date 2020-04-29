@@ -1,0 +1,24 @@
+{
+  "name": "sysfs-bpi-gpio",
+  "version": "1.0.0",
+  "description": "BananaPi file system GPIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newbreach/sysfs-bpi-gpio.git"
+  },
+  "keywords": [
+    "sysfs",
+    "bpi",
+    "gpio"
+  ],
+  "author": "newbreach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/newbreach/sysfs-bpi-gpio/issues"
+  },
+  "homepage": "https://github.com/newbreach/sysfs-bpi-gpio#readme"
+}
