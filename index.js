@@ -16,6 +16,9 @@ let fs = require('fs'),
  * @param {Function} fn 
  */
 let _write = function (str, file, fn) {
+  if (!fs.existsSync(file)) {
+    return typeof fn === 'function' ? fn() : undefined;
+  }
   if (typeof fn === 'function') {
     fs.writeFile(file, str, { encoding: 'utf-8' }, fn);
   } else {
@@ -29,6 +32,9 @@ let _write = function (str, file, fn) {
  * @param {Function} fn 
  */
 let _read = function (file, fn) {
+  if (!fs.existsSync(file)) {
+    return typeof fn === 'function' ? fn() : undefined;
+  }
   if (typeof fn === 'function') {
     fs.readFile(file, { encoding: 'utf-8' }, fn);
   } else {
